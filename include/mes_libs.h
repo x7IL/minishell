@@ -1,0 +1,43 @@
+//
+// Created by wx on 15/05/2022.
+//
+
+#ifndef MES_LIBS_H
+#define MES_LIBS_H
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <time.h>
+
+#include "../mes_libs/checker.h"
+#include "../mes_libs/spliter.h"
+#include "../mes_libs/mon_string.h"
+#include "../mes_libs/executeur.h"
+#include "../mes_libs/date.h"
+#include "../mes_libs/pwdd.h"
+#include "../mes_libs/echoo.h"
+#include "../mes_libs/userr.h"
+#include "../mes_libs/lss.h"
+void date();
+
+int compare(const char *tab1, const char *tab2);
+int verifi(const char *tab);
+int mon_len(const char *b);
+void * mon_strcpy(void *dest, const void *src, size_t len);
+char * mon_strcat(char *s, const char *append);
+char * separateur_option(char * tab1, int l, char * option);
+char * separateur_commande(char * tab1, int l, char *option);
+int execute_cmd(char *cmd, char * option);
+//void mon_printf(char const *str);
+void echo(char const *str);
+void mon_write(char c);
+char * pwd();
+char * user();
+void ls(char * option);
+void cd(char * path);
+
+#endif //MES_LIBS_H
