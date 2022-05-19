@@ -6,6 +6,7 @@
 
 void ls(char * option){
     DIR *rep = opendir ("." );
+    //printf("[%s]\n",option);
     if (rep != NULL){
         struct dirent *lecture;
         while ((lecture = readdir(rep))){

@@ -17,18 +17,13 @@ void date(){
 }
 
 void cd(char * path){
-    char temp[256];
-    mon_strcpy(temp,path, mon_len(path)+1);
-    temp[mon_len(temp)-1]='\0';
+    printf("[%s]\n",path);
     //printf("%s\n",temp);
-    if(temp[0] == '\0'){
-        mon_strcpy(temp,getenv("HOME"), mon_len(getenv("HOME"))+1);
+    if(path[0] == '\0'){
+        mon_strcpy(path,getenv("HOME"));
     }
-    if(chdir(temp) != 0){
+    if(chdir(path) != 0){
         printf("changement raté\n");
-    }
-    else {
-        chdir(path);
     }
 }
 

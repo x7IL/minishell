@@ -36,6 +36,9 @@ int verifi(const char *tab){ //regarde si le input est egale aux commande se tro
                          "mkdir",
                          "help",
                          "user",
+                         "home",
+                         "shell",
+                         "PS1=",
                          NULL
     };
 

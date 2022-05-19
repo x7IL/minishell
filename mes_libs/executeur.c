@@ -33,28 +33,63 @@ int execute_cmd(char *cmd, char *option){
     //printf("cmd :%s\n",cmd);
     //printf("option :[%s]\n",option);
     if(compare(cmd, "pwd") == 0){
-        printf("%s\n",pwd());
+        if(separateur_compteur_option(option) > 0) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            printf("%s\n",pwd());
+        }
     }
     else if(compare(cmd,"user") == 0){
-        printf("%s\n",user(option));
+        printf("%s\n",user());
+    }
+    else if(compare(cmd,"home") == 0){
+        printf("%s\n",home());
+    }
+    else if(compare(cmd,"shell") == 0){
+        printf("%s\n",shell());
+    }
+    else if(compare(cmd,"PS1=") == 0){
+        return 741;
     }
     else if(compare(cmd,"ls") == 0){
         ls(option);
     }
     else if(compare(cmd,"date") == 0){
-        date();
+        if(separateur_compteur_option(option) > 0) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            date();
+        }
     }
     else if(compare(cmd,"echo") == 0){
         //printf("[%s]\n",option);
         echo(option);
     }
     else if(compare(cmd,"cd") == 0){
-        cd(option);
+        if(separateur_compteur_option(option) > 0) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            cd(option);
+        }
+    }
+    else if(compare(cmd,"mkdir") == 0){
+        if(separateur_compteur_option(option) > 0) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            Mkdir(option);
+        }
     }
     if(compare(cmd, "exit") == 0){
-        return 0;
+        if(separateur_compteur_option(option) > 0) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            return 0;
+        }
     }
-    else{
-        return 1;
-    }
+    return 1;
 }

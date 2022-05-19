@@ -27,17 +27,24 @@ void date();
 int compare(const char *tab1, const char *tab2);
 int verifi(const char *tab);
 int mon_len(const char *b);
-void * mon_strcpy(void *dest, const void *src, size_t len);
+void * mon_strcpy(void *dest, const void *src);
 char * mon_strcat(char *s, const char *append);
-char * separateur_option(char * tab1, int l, char * option);
-char * separateur_commande(char * tab1, int l, char *option);
+
+char * separateur_option(char * tab1, int l);
+char * separateur_commande(char * tab1, int l);
+int sep_egale_compteur(const char *tab1);
+char *sep_egale(char * tab1, int l);
+
 int execute_cmd(char *cmd, char * option);
 //void mon_printf(char const *str);
 void echo(char const *str);
 void mon_write(char c);
 char * pwd();
 char * user();
+char * shell();
+char * home();
 void ls(char * option);
 void cd(char * path);
+void Mkdir(char *option);
 
 #endif //MES_LIBS_H

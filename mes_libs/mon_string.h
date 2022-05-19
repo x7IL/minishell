@@ -7,7 +7,7 @@
 
 
 int mon_len(const char *b);
-void * mon_strcpy(void *dest, const void *src, size_t len);
+void * mon_strcpy(void *dest, const void *src);
 char * mon_strcat(char *s, const char *append);
 
 //void mon_printf(char const *str);
