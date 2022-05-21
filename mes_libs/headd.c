@@ -45,5 +45,21 @@ void head(char * fichier){
             printf("le fichier entré, n'existe pas où ne se toruve pas dans le directoire \n");
         }
     }
+}
 
+void history(){
+    //printf("%s\n",pwd());
+    char str[256];
+    int i = 0;
+    FILE* ptr = fopen("my_history.txt", "r");
+    //printf("normalement\n");
+    while (fgets(str, sizeof(str), ptr)) {
+        printf("%s", str);
+        i++;
+        if(10==i){
+            break;
+        }
+    }
+    //printf("fin\n");
+    fclose(ptr);
 }

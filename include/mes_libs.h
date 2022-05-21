@@ -48,5 +48,6 @@ void ls(char * option);
 void cd(char * path);
 void Mkdir(char *option);
 void head(char * fichier);
+void history();
 
 #endif //MES_LIBS_H

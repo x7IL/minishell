@@ -5,15 +5,15 @@
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c mes_libs/cdd.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c
-
+//gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c
 
 //◦ my_cd                                                           ok
-//◦ my_history (liste des commandes passé, history 10 : )
+//◦ my_history (liste des commandes passé, history 10 : )           ok
 //◦ my_pwd ( pas avec get)                                          ok          demander prof, getenv static pas possible
 //◦ my_ls (avec option -a -l et autres)                             ok          besoin d'option
 //◦ my_date                                                         ok          à modifier
-//◦ my_echo (pas de printf pour echo)                               ok          mnarche plys, string cpy et cat a refaire
-//◦ my_head
+//◦ my_echo (pas de printf pour echo)                               ok
+//◦ my_head                                                         ok
 //◦ my_mkdir                                                        ok
 //◦ my_help (Cette commande donne les commandes intégrés dans le mini shell)
 //◦ my_exit                                                         ok
@@ -76,11 +76,9 @@ void shell_loop(void){
                     //printf("<---->[%s]<---->\n",reste);
                     mon_strcat(fulloption, separateur_option(buffer, i));
                 }
-
-
-                   fulloption[mon_len(fulloption)-1] = '\0';
-                    printf("-->[%s]\n",fulloption);
-//                 printf("[%s]<--\n",fulloption);
+                    fulloption[mon_len(fulloption)-1] = '\0';
+                    //printf("-->[%s]\n",fulloption);
+//                  printf("[%s]<--\n",fulloption);
             }
             else{
                 mon_strcpy(cmd,sep_egale(buffer,0));

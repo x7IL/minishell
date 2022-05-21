@@ -42,3 +42,20 @@ head my_history.txt 3
 exit
 head my_history.txt
 head my_history.txt 20
+exit
+history
+exit
+history
+exit
+history
+history
+history
+history
+history
+exit
+history
+history
+exit
+history
+exit
+history

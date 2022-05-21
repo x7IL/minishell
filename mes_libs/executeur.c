@@ -56,7 +56,7 @@ int execute_cmd(char *cmd, char *option){
         ls(option);
     }
     else if(compare(cmd,"date") == 0){
-        if(separateur_compteur_option(option) > 0) {
+        if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
         }
         else{
@@ -68,7 +68,7 @@ int execute_cmd(char *cmd, char *option){
         echo(option);
     }
     else if(compare(cmd,"cd") == 0){
-        if(separateur_compteur_option(option) > 0) {
+        if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
         }
         else{
@@ -76,7 +76,7 @@ int execute_cmd(char *cmd, char *option){
         }
     }
     else if(compare(cmd,"mkdir") == 0){
-        if(separateur_compteur_option(option) > 0) {
+        if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
         }
         else{
@@ -89,6 +89,14 @@ int execute_cmd(char *cmd, char *option){
         }
         else{
             head(option);
+        }
+    }
+    else if(compare(cmd,"history") == 0){
+        if(separateur_compteur_option(option) > 1) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            history(option);
         }
     }
     if(compare(cmd, "exit") == 0){
