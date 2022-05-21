@@ -64,7 +64,7 @@ int execute_cmd(char *cmd, char *option){
         }
     }
     else if(compare(cmd,"echo") == 0){
-        //printf("[%s]\n",option);
+        printf("[%s]\n",option);
         echo(option);
     }
     else if(compare(cmd,"cd") == 0){
@@ -81,6 +81,14 @@ int execute_cmd(char *cmd, char *option){
         }
         else{
             Mkdir(option);
+        }
+    }
+    else if(compare(cmd,"head") == 0){
+        if(separateur_compteur_option(option) > 2) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            head(option);
         }
     }
     if(compare(cmd, "exit") == 0){

@@ -4,9 +4,23 @@
 #include "../include/mes_libs.h"
 
 
+//char * pwd(){
+//    char lepath[1000];
+//    char *result;
+//    result = getwd(lepath);
+//    return result;
+//}
+
+// pwd static, c'est nul.
+//char * pwd(){
+//    return getenv("PWD")
+//}
+
 char * pwd(){
-    char lepath[1000];
-    char *result;
-    result = getwd(lepath);
-    return result;
+    char buffer[500];
+    FILE *output;
+    output = popen("/bin/pwd", "r");
+    char *pwd = fgets(buffer, sizeof(buffer), output);
+    pwd[mon_len(pwd)-1 ] = '\0';
+    return pwd;;
 }

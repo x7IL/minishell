@@ -22,9 +22,7 @@ char *separateur_option(char * tab1, int l){
             break;
         }
     }
-    if(separateur_compteur_option(tab1)<1) {          // si y'a option > 1, on met pas de null a la fin de cmd sinon oui
-        nom[mon_len(nom) - 1] = '\0';
-    }
+
     //nom[mon_len(nom)] = '\0';
     //printf("-->[%s]",option);
 

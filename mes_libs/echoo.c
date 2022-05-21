@@ -28,6 +28,9 @@ void echo(char const *str){
         write(1,"\n",2);
         write(1,"\n",2);
     }
-
-
 }
+
+//void echo(char const *str){
+//    //printf("test [%s]\n",str);
+//    puts(str);
+//}

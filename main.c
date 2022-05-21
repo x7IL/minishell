@@ -4,13 +4,15 @@
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c mes_libs/cdd.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c
+//gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c
+
 
 //◦ my_cd                                                           ok
 //◦ my_history (liste des commandes passé, history 10 : )
 //◦ my_pwd ( pas avec get)                                          ok          demander prof, getenv static pas possible
 //◦ my_ls (avec option -a -l et autres)                             ok          besoin d'option
 //◦ my_date                                                         ok          à modifier
-//◦ my_echo (pas de printf pour echo)                               ok
+//◦ my_echo (pas de printf pour echo)                               ok          mnarche plys, string cpy et cat a refaire
 //◦ my_head
 //◦ my_mkdir                                                        ok
 //◦ my_help (Cette commande donne les commandes intégrés dans le mini shell)
@@ -59,17 +61,26 @@ void shell_loop(void){
         //printf("cmd : [%s] option : [%d]\n", separateur_commande(buffer,0,buffer),verifi(separateur_commande(buffer,0,buffer)));
 
         if((verifi(separateur_commande(buffer,0)) == 1) || (verifi(sep_egale(buffer,0)) == 1)){
-
+            FILE* fp = fopen("my_history.txt", "a");
+            fseek(fp, 0, SEEK_END);
+            fwrite(buffer, sizeof(char) * mon_len(buffer), sizeof(char), fp);
+            fclose(fp);
             if((verifi(sep_egale(buffer,0)) != 1)) {
                 mon_strcpy(cmd,separateur_commande(buffer,0));
                 mon_strcpy(fulloption,separateur_option(buffer,1));
 
                 for (int i = 2; i < separateur_compteur_option(buffer) + 1; i++) {
                     mon_strcpy(reste, separateur_option(buffer, i));
-                    mon_strcat(fulloption, reste);
-
+                    //reste[mon_len(reste)-1] = '\0';
+                    //printf("-->[%s]<--\n",separateur_option(buffer, i));
+                    //printf("<---->[%s]<---->\n",reste);
+                    mon_strcat(fulloption, separateur_option(buffer, i));
                 }
-                fulloption[mon_len(fulloption)-1] = '\0';
+
+
+                   fulloption[mon_len(fulloption)-1] = '\0';
+                    printf("-->[%s]\n",fulloption);
+//                 printf("[%s]<--\n",fulloption);
             }
             else{
                 mon_strcpy(cmd,sep_egale(buffer,0));
@@ -89,18 +100,16 @@ void shell_loop(void){
                 fulloption[mon_len(fulloption)] = sep_egale(buffer, 1)[mon_len(sep_egale(buffer, 1))-1];        //long truc, pck ca prend pas le last caractere
                 mon_strcpy(PS1,fulloption);
             }
-
-
         }
         else{
             printf("!!! COMMANDE INVALIDE !!!\n");
         }
 
+
         mon_strcpy(fulloption,"");
 
         //free(args);
     } while (1);
-    //fclose(f);
 }
 
 
@@ -111,9 +120,6 @@ int main(){
 // Run command loop.
     shell_loop();
     printf("\nFin du Mini SHELL \n");
-
-
-
 
     return EXIT_SUCCESS;
 }

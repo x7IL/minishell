@@ -22,12 +22,13 @@
 #include "../mes_libs/echoo.h"
 #include "../mes_libs/userr.h"
 #include "../mes_libs/lss.h"
+#include "../mes_libs/headd.h"
 void date();
 
 int compare(const char *tab1, const char *tab2);
 int verifi(const char *tab);
 int mon_len(const char *b);
-void * mon_strcpy(void *dest, const void *src);
+void * mon_strcpy(char *dest, const char *src);
 char * mon_strcat(char *s, const char *append);
 
 char * separateur_option(char * tab1, int l);
@@ -46,5 +47,6 @@ char * home();
 void ls(char * option);
 void cd(char * path);
 void Mkdir(char *option);
+void head(char * fichier);
 
 #endif //MES_LIBS_H
