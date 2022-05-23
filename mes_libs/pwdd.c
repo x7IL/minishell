@@ -22,5 +22,12 @@ char * pwd(){
     output = popen("/bin/pwd", "r");
     char *pwd = fgets(buffer, sizeof(buffer), output);
     pwd[mon_len(pwd)-1 ] = '\0';
-    return pwd;;
+    return pwd;
+}
+
+void * clear(){
+    for(int i =0; i<1000;i++){
+        printf("\n");
+    }
+    return 0;
 }

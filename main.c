@@ -6,6 +6,7 @@
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c
+//gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c mes_libs/help.c
 
 //◦ my_cd                                                           ok
 //◦ my_history (liste des commandes passé, history 10 : )           ok
@@ -15,8 +16,10 @@
 //◦ my_echo (pas de printf pour echo)                               ok
 //◦ my_head                                                         ok
 //◦ my_mkdir                                                        ok
-//◦ my_help (Cette commande donne les commandes intégrés dans le mini shell)
+//◦ my_help (Cette commande donne les commandes intégrés dans le mini shell)        ok
 //◦ my_exit                                                         ok
+//◦ clear                                                           ok
+//◦ env
 //◦ Bonus : Toutes autres commandes
 // Variables d’environnement à intégrer :
 //◦ HOME
@@ -45,19 +48,34 @@ void shell_loop(void){
 //    SHELL = getenv("SHELL");
 
     char *buffer;
-    size_t bufsize = 32;
-
-
+    size_t bufsize = 256;
     buffer = (char *)malloc(bufsize * sizeof(char));
+
+
 
     do {
         char cmd[256];
         char reste[500];
         char fulloption[500];
 
+
         printf("%s ",PS1);
         //printf("[%s]\n",sep_egale(buffer,0));
         getline(&buffer,&bufsize,stdin);
+
+        int m = 0;
+        int l = 0;
+        if(compare(separateur_commande(buffer,0),"echo") != 0) {
+            while (buffer[m] != '\0') {
+                if (((buffer[m] == ' ' && buffer[m + 1] == ' ') || (buffer[m] == ' ' && buffer[m + 1] == '\0')) != 1) {
+                    buffer[l] = buffer[m];
+                    l++;
+                }
+                m++;
+            }
+            buffer[l] = '\0';
+        }
+
         //printf("cmd : [%s] option : [%d]\n", separateur_commande(buffer,0,buffer),verifi(separateur_commande(buffer,0,buffer)));
 
         if((verifi(separateur_commande(buffer,0)) == 1) || (verifi(sep_egale(buffer,0)) == 1)){
@@ -108,6 +126,7 @@ void shell_loop(void){
 
         //free(args);
     } while (1);
+    //free(buffer);
 }
 
 
@@ -121,3 +140,4 @@ int main(){
 
     return EXIT_SUCCESS;
 }
+

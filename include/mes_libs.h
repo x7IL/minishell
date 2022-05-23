@@ -23,6 +23,7 @@
 #include "../mes_libs/userr.h"
 #include "../mes_libs/lss.h"
 #include "../mes_libs/headd.h"
+#include "../mes_libs/help.h"
 void date();
 
 int compare(const char *tab1, const char *tab2);
@@ -49,5 +50,7 @@ void cd(char * path);
 void Mkdir(char *option);
 void head(char * fichier);
 void history();
+void * clear();
+void Helpp(char *option);
 
 #endif //MES_LIBS_H

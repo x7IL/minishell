@@ -39,7 +39,7 @@ int execute_cmd(char *cmd, char *option){
         else{
             printf("%s\n",pwd());
         }
-    }
+    }               //ko
     else if(compare(cmd,"user") == 0){
         printf("%s\n",user());
     }
@@ -51,7 +51,7 @@ int execute_cmd(char *cmd, char *option){
     }
     else if(compare(cmd,"PS1=") == 0){
         return 741;
-    }
+    }           //ok
     else if(compare(cmd,"ls") == 0){
         ls(option);
     }
@@ -62,11 +62,11 @@ int execute_cmd(char *cmd, char *option){
         else{
             date();
         }
-    }
+    }           //ok
     else if(compare(cmd,"echo") == 0){
         printf("[%s]\n",option);
         echo(option);
-    }
+    }           //ok
     else if(compare(cmd,"cd") == 0){
         if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
@@ -74,13 +74,21 @@ int execute_cmd(char *cmd, char *option){
         else{
             cd(option);
         }
-    }
+    }             //ok
     else if(compare(cmd,"mkdir") == 0){
         if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
         }
         else{
             Mkdir(option);
+        }
+    }          //ok
+    else if(compare(cmd,"help") == 0){
+        if(separateur_compteur_option(option) > 2) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            Helpp(option);
         }
     }
     else if(compare(cmd,"head") == 0){
@@ -90,7 +98,7 @@ int execute_cmd(char *cmd, char *option){
         else{
             head(option);
         }
-    }
+    }           //ok
     else if(compare(cmd,"history") == 0){
         if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
@@ -98,7 +106,15 @@ int execute_cmd(char *cmd, char *option){
         else{
             history(option);
         }
-    }
+    }        //ok
+    else if(compare(cmd,"clear") == 0){
+        if(separateur_compteur_option(option) > 1) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            clear(option);
+        }
+    }          //ok
     if(compare(cmd, "exit") == 0){
         if(separateur_compteur_option(option) > 0) {
             printf("Trop de parametres\n");
@@ -106,6 +122,6 @@ int execute_cmd(char *cmd, char *option){
         else{
             return 0;
         }
-    }
+    }               //ok
     return 1;
 }

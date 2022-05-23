@@ -13,7 +13,7 @@ int compare(const char *tab1, const char *tab2){    // savoir si c'est exit ou p
     //printf("[%s] - [%d]\n",tab1, mon_len(tab1));
     //printf("[%s] - [%d]\n",tab2, mon_len(tab2));
     while(tab1[i]!= '\0'){
-        if(*tab1++ != *tab2++){
+        if(tab1[i] != tab2[i]){
             return 1;
         }
         i++;
@@ -39,6 +39,7 @@ int verifi(const char *tab){ //regarde si le input est egale aux commande se tro
                          "home",
                          "shell",
                          "PS1=",
+                         "clear",
                          NULL
     };
 

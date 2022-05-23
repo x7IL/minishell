@@ -13,38 +13,22 @@ void head(char * fichier){
         n=10;
     }
     //printf("[%s] [%d]\n",separateur_commande(fichier,0),n);
-    int boolean = 0;
-
-    DIR *rep = opendir ("." );
-    //printf("[%s]\n",option);
-    if (rep != NULL){
-        struct dirent *lecture;
-        while ((lecture = readdir(rep))){
-            struct stat st;
-            stat (lecture->d_name, &st);{
-                if(compare(lecture->d_name,separateur_option(fichier,0)) == 0){
-                    boolean = 1;
-                }
-                if(boolean == 1){
-                    FILE* ptr = fopen(separateur_option(fichier,0), "r");
-                    //printf("normalement\n");
-                    while (fgets(str, sizeof(str), ptr)) {
-                        printf("%s", str);
-                        i++;
-                        if(n==i){
-                            break;
-                        }
-                    }
-                    //printf("fin\n");
-                    fclose(ptr);
-                    break;
-                }
+    FILE* ptr = fopen(separateur_option(fichier,0), "r");
+    //printf("normalement\n");
+    if(ptr != NULL) {
+        while (fgets(str, sizeof(str), ptr)) {
+            printf("%s", str);
+            i++;
+            if (n == i) {
+                break;
             }
         }
-        if(boolean == 0){
-            printf("le fichier entré, n'existe pas où ne se toruve pas dans le directoire \n");
-        }
     }
+    else{
+        printf("fichier introuvable ou pas dans le repertoire");
+    }
+    //printf("fin\n");
+    fclose(ptr);
 }
 
 void history(){

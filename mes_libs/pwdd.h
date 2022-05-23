@@ -8,6 +8,7 @@
 
 extern char *getwd ();
 char * pwd();
+void * clear();
 
 
 #endif //MINISHELL_PWDD_H
