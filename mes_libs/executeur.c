@@ -27,11 +27,11 @@
 //◦ Gestion des Alias
 //◦ pipe
 //◦ redirection
-int execute_cmd(char *cmd, char *option){
-    //printf("cmd ==> |%s|\n",cmd);
 
-    //printf("cmd :%s\n",cmd);
-    //printf("option :[%s]\n",option);
+
+int execute_cmd(char *cmd, char *option){
+//    printf("cmd ==> |%s|\n",cmd);
+//    printf("option :[%s]\n",option);
     if(compare(cmd, "pwd") == 0){
         if(separateur_compteur_option(option) > 0) {
             printf("Trop de parametres\n");
@@ -114,7 +114,47 @@ int execute_cmd(char *cmd, char *option){
         else{
             clear(option);
         }
-    }          //ok
+    }
+    else if(compare(cmd,"cat") == 0){
+        if(separateur_compteur_option(option) > 1) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            cat(option);
+        }
+    }
+    else if(compare(cmd,"wc") == 0){
+        if(separateur_compteur_option(option) > 3) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            wc(option);
+        }
+    }
+    else if(compare(cmd,"rm") == 0){
+        if(separateur_compteur_option(option) > 1) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            rmm(option);
+        }
+    }
+    else if(compare(cmd,"touch") == 0){
+        if(separateur_compteur_option(option) > 1) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            touch(option);
+        }
+    }
+    else if(compare(cmd,"rmdir") == 0){
+        if(separateur_compteur_option(option) > 1) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            Rmdir(option);
+        }
+    }
     if(compare(cmd, "exit") == 0){
         if(separateur_compteur_option(option) > 0) {
             printf("Trop de parametres\n");

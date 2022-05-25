@@ -40,6 +40,11 @@ int verifi(const char *tab){ //regarde si le input est egale aux commande se tro
                          "shell",
                          "PS1=",
                          "clear",
+                         "cat",
+                         "wc",
+                         "rm",
+                         "touch",
+                         "rmdir",
                          NULL
     };
 

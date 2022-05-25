@@ -38,10 +38,10 @@ void history(){
     FILE* ptr = fopen("my_history.txt", "r");
     //printf("normalement\n");
     while (fgets(str, sizeof(str), ptr)) {
-        printf("%s", str);
+        //printf("%s", str);
         i++;
-        if(10==i){
-            break;
+        if(i>=wc("my_history.txt -l")-10){
+            printf("%s", str);
         }
     }
     //printf("fin\n");

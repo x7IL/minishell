@@ -42,3 +42,13 @@ char * mon_strcat(char *s, const char *append){
 
     return s;
 }
+
+char * mon_strcat3(char *s, const char *append){
+    int i = 0;
+    while(s[i] != '\0') i++;
+    for(int j = 0; append[j]!='\0'; j++){
+        s[i + j] = append[j];
+    }
+
+    return s;
+}

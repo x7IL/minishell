@@ -7,6 +7,7 @@
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c mes_libs/help.c
+//gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c mes_libs/help.c mes_libs/catt.c mes_libs/wcc.c mes_libs/rmm.c
 
 //◦ my_cd                                                           ok
 //◦ my_history (liste des commandes passé, history 10 : )           ok
@@ -19,7 +20,9 @@
 //◦ my_help (Cette commande donne les commandes intégrés dans le mini shell)        ok
 //◦ my_exit                                                         ok
 //◦ clear                                                           ok
-//◦ env
+//◦ cat
+//◦ wc
+//◦ rm
 //◦ Bonus : Toutes autres commandes
 // Variables d’environnement à intégrer :
 //◦ HOME
@@ -49,7 +52,11 @@ void shell_loop(void){
 
     char *buffer;
     size_t bufsize = 256;
-    buffer = (char *)malloc(bufsize * sizeof(char));
+
+
+    char homee[200];
+    mon_strcpy(homee,getenv("PWD"));
+    mon_strcat3(homee,"/my_history.txt");
 
 
 
@@ -57,6 +64,7 @@ void shell_loop(void){
         char cmd[256];
         char reste[500];
         char fulloption[500];
+        buffer = (char *)malloc(bufsize * sizeof(char));
 
 
         printf("%s ",PS1);
@@ -65,6 +73,7 @@ void shell_loop(void){
 
         int m = 0;
         int l = 0;
+
         if(compare(separateur_commande(buffer,0),"echo") != 0) {
             while (buffer[m] != '\0') {
                 if (((buffer[m] == ' ' && buffer[m + 1] == ' ') || (buffer[m] == ' ' && buffer[m + 1] == '\0')) != 1) {
@@ -75,38 +84,32 @@ void shell_loop(void){
             }
             buffer[l] = '\0';
         }
-
         //printf("cmd : [%s] option : [%d]\n", separateur_commande(buffer,0,buffer),verifi(separateur_commande(buffer,0,buffer)));
+        if(compare(buffer,"\n")==0){
+            printf("\n");
+        }
+        else if((verifi(separateur_commande(buffer,0)) == 1) || (verifi(sep_egale(buffer,0)) == 1)){
 
-        if((verifi(separateur_commande(buffer,0)) == 1) || (verifi(sep_egale(buffer,0)) == 1)){
-            FILE* fp = fopen("my_history.txt", "a");
+            FILE* fp = fopen(homee, "a");
             fseek(fp, 0, SEEK_END);
             fwrite(buffer, sizeof(char) * mon_len(buffer), sizeof(char), fp);
             fclose(fp);
+
             if((verifi(sep_egale(buffer,0)) != 1)) {
                 mon_strcpy(cmd,separateur_commande(buffer,0));
                 mon_strcpy(fulloption,separateur_option(buffer,1));
-
-                for (int i = 2; i < separateur_compteur_option(buffer) + 1; i++) {
+                for (int i = 2; i < separateur_compteur_option(buffer)+1; i++) {
                     mon_strcpy(reste, separateur_option(buffer, i));
-                    //reste[mon_len(reste)-1] = '\0';
-                    //printf("-->[%s]<--\n",separateur_option(buffer, i));
-                    //printf("<---->[%s]<---->\n",reste);
                     mon_strcat(fulloption, separateur_option(buffer, i));
                 }
-                    fulloption[mon_len(fulloption)-1] = '\0';
-                    //printf("-->[%s]\n",fulloption);
-//                  printf("[%s]<--\n",fulloption);
+                fulloption[mon_len(fulloption)-1] = '\0';
             }
             else{
                 mon_strcpy(cmd,sep_egale(buffer,0));
-                //printf("--> full [%s]\n",sep_egale(buffer,1));
-                //printf("--> rien [%s]\n",fulloption);
                 mon_strcpy(fulloption, sep_egale(buffer, 1));
                 fulloption[mon_len(fulloption)-1] = '\0';
             }
             int temp = execute_cmd(cmd, fulloption);
-
             //printf("[%s]\n",sep_egale(buffer,1));
             if(temp == 0){
                 break;
@@ -120,13 +123,11 @@ void shell_loop(void){
         else{
             printf("!!! COMMANDE INVALIDE !!!\n");
         }
-
-
         mon_strcpy(fulloption,"");
-
+        free(buffer);
         //free(args);
     } while (1);
-    //free(buffer);
+    //
 }
 
 

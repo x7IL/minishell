@@ -19,12 +19,14 @@ void date(){
 void cd(char * path){
     printf("[%s]\n",path);
     //printf("%s\n",temp);
-    if(path[0] == '\0'){
-        mon_strcpy(path,getenv("HOME"));
+              //fini
+    if (path[0]=='\0'){
+        chdir(getenv("HOME"));
     }
-    if(chdir(path) != 0){
-        printf("changement raté\n");
+    else{
+        chdir(path);
     }
+
 }
 
 //            if(compare(cmd,"cd") == 0){

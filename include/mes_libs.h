@@ -24,6 +24,8 @@
 #include "../mes_libs/lss.h"
 #include "../mes_libs/headd.h"
 #include "../mes_libs/help.h"
+#include "../mes_libs/rmm.h"
+
 void date();
 
 int compare(const char *tab1, const char *tab2);
@@ -31,6 +33,7 @@ int verifi(const char *tab);
 int mon_len(const char *b);
 void * mon_strcpy(char *dest, const char *src);
 char * mon_strcat(char *s, const char *append);
+char * mon_strcat3(char *s, const char *append);
 
 char * separateur_option(char * tab1, int l);
 char * separateur_commande(char * tab1, int l);
@@ -52,5 +55,10 @@ void head(char * fichier);
 void history();
 void * clear();
 void Helpp(char *option);
+void cat(char * option);
+int wc(char *option);
+void rmm(char * option);
+void touch(char *option);
+void Rmdir(char * option);
 
 #endif //MES_LIBS_H
