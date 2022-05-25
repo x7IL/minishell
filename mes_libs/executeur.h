@@ -4,6 +4,6 @@
 
 #ifndef MINISHELL_EXECUTEUR_H
 #define MINISHELL_EXECUTEUR_H
-int execute_cmd(char *cmd, char *option);
+int execute_cmd(char *cmd, char *option,char * HOME);
 
 #endif //MINISHELL_EXECUTEUR_H

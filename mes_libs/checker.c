@@ -45,6 +45,7 @@ int verifi(const char *tab){ //regarde si le input est egale aux commande se tro
                          "rm",
                          "touch",
                          "rmdir",
+                         "HOME=",
                          NULL
     };
 

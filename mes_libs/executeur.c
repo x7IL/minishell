@@ -29,7 +29,7 @@
 //◦ redirection
 
 
-int execute_cmd(char *cmd, char *option){
+int execute_cmd(char *cmd, char *option, char *HOME){
 //    printf("cmd ==> |%s|\n",cmd);
 //    printf("option :[%s]\n",option);
     if(compare(cmd, "pwd") == 0){
@@ -52,6 +52,9 @@ int execute_cmd(char *cmd, char *option){
     else if(compare(cmd,"PS1=") == 0){
         return 741;
     }           //ok
+    else if(compare(cmd,"HOME=") == 0){
+        return 742;
+    }
     else if(compare(cmd,"ls") == 0){
         ls(option);
     }
@@ -72,7 +75,7 @@ int execute_cmd(char *cmd, char *option){
             printf("Trop de parametres\n");
         }
         else{
-            cd(option);
+            cd(option, HOME);
         }
     }             //ok
     else if(compare(cmd,"mkdir") == 0){

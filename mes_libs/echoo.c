@@ -18,6 +18,7 @@ void mon_write(char c){
 }
 
 void echo(char const *str){
+    printf("[%s]\n",str);
     //printf("test [%s]\n",str);
     if(str[0]!='\0'){
         int nb = 0;

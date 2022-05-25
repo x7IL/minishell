@@ -16,15 +16,17 @@ void date(){
 
 }
 
-void cd(char * path){
+void cd(char * path, char * HOME){
     printf("[%s]\n",path);
     //printf("%s\n",temp);
               //fini
     if (path[0]=='\0'){
-        chdir(getenv("HOME"));
+        chdir(HOME);
     }
     else{
-        chdir(path);
+        if(chdir(path) != 0){
+            printf("changement raté\n");
+        }
     }
 
 }

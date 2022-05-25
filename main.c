@@ -45,18 +45,19 @@ void shell_loop(void){
 //    }
 
     char PS1[256] = "Esiea_shell_>";
-//    char *HOME = malloc(sizeof (getenv("HOME")) + 1);
-//    HOME = getenv("HOME");
+    char *HOME = malloc(sizeof (getenv("HOME")) + 1);
+    HOME = getenv("HOME");
 //    char *SHELL = malloc(sizeof (getenv("SHELL")) + 1);
 //    SHELL = getenv("SHELL");
 
     char *buffer;
-    size_t bufsize = 256;
+    size_t bufsize = 556;
 
 
     char homee[200];
     mon_strcpy(homee,getenv("PWD"));
-    mon_strcat3(homee,"/my_history.txt");
+    mon_strcat3(homee,"/my_history.txt ");
+    //printf("[%s]\n",homee);
 
 
 
@@ -64,7 +65,7 @@ void shell_loop(void){
         char cmd[256];
         char reste[500];
         char fulloption[500];
-        buffer = (char *)malloc(bufsize * sizeof(char));
+        buffer = malloc(bufsize * sizeof(char));
 
 
         printf("%s ",PS1);
@@ -109,7 +110,7 @@ void shell_loop(void){
                 mon_strcpy(fulloption, sep_egale(buffer, 1));
                 fulloption[mon_len(fulloption)-1] = '\0';
             }
-            int temp = execute_cmd(cmd, fulloption);
+            int temp = execute_cmd(cmd, fulloption,HOME);
             //printf("[%s]\n",sep_egale(buffer,1));
             if(temp == 0){
                 break;
@@ -119,13 +120,20 @@ void shell_loop(void){
                 fulloption[mon_len(fulloption)] = sep_egale(buffer, 1)[mon_len(sep_egale(buffer, 1))-1];        //long truc, pck ca prend pas le last caractere
                 mon_strcpy(PS1,fulloption);
             }
+            else if(temp == 742){
+                mon_strcpy(HOME,"");
+                fulloption[mon_len(fulloption)] = sep_egale(buffer, 1)[mon_len(sep_egale(buffer, 1))-1];        //long truc, pck ca prend pas le last caractere
+                mon_strcpy(HOME,fulloption);
+            }
         }
         else{
             printf("!!! COMMANDE INVALIDE !!!\n");
         }
         mon_strcpy(fulloption,"");
+        mon_strcpy(buffer,"");
         free(buffer);
         //free(args);
+        reset();
     } while (1);
     //
 }

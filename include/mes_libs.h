@@ -40,7 +40,7 @@ char * separateur_commande(char * tab1, int l);
 int sep_egale_compteur(const char *tab1);
 char *sep_egale(char * tab1, int l);
 
-int execute_cmd(char *cmd, char * option);
+int execute_cmd(char *cmd, char * option, char * HOME);
 //void mon_printf(char const *str);
 void echo(char const *str);
 void mon_write(char c);
@@ -49,7 +49,7 @@ char * user();
 char * shell();
 char * home();
 void ls(char * option);
-void cd(char * path);
+void cd(char * path, char *HOME);
 void Mkdir(char *option);
 void head(char * fichier);
 void history();

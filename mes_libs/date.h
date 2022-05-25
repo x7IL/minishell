@@ -6,6 +6,6 @@
 #define MINISHELL_DATE_H
 
 void date();
-void cd(char * path);
+void cd(char * path, char * HOME);
 
 #endif //MINISHELL_DATE_H
