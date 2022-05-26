@@ -29,7 +29,7 @@
 //◦ redirection
 
 
-int execute_cmd(char *cmd, char *option, char *HOME){
+int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
 //    printf("cmd ==> |%s|\n",cmd);
 //    printf("option :[%s]\n",option);
     if(compare(cmd, "pwd") == 0){
@@ -156,6 +156,20 @@ int execute_cmd(char *cmd, char *option, char *HOME){
         }
         else{
             Rmdir(option);
+        }
+    }
+    else if(compare(cmd,"su") == 0){
+        if(separateur_compteur_option(option) > 2) {
+            printf("Trop de parametres\n");
+        }
+        else if(separateur_option(option,0)[0] == '\0'){
+            printf("manque l'utilisateur\n");
+        }
+        else if(separateur_option(option,1)[0] == '\0'){
+            printf("manque le mot de passe\n");
+        }
+        else{
+            return droit(option);
         }
     }
     if(compare(cmd, "exit") == 0){

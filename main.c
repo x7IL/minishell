@@ -47,8 +47,8 @@ void shell_loop(void){
     char PS1[256] = "Esiea_shell_>";
     char *HOME = malloc(sizeof (getenv("HOME")) + 1);
     HOME = getenv("HOME");
-//    char *SHELL = malloc(sizeof (getenv("SHELL")) + 1);
-//    SHELL = getenv("SHELL");
+    char *USER = malloc(sizeof (getenv("SHELL")) + 1);
+    USER = getenv("USER");
 
     char *buffer;
     size_t bufsize = 556;
@@ -110,7 +110,7 @@ void shell_loop(void){
                 mon_strcpy(fulloption, sep_egale(buffer, 1));
                 fulloption[mon_len(fulloption)-1] = '\0';
             }
-            int temp = execute_cmd(cmd, fulloption,HOME);
+            int temp = execute_cmd(cmd, fulloption,HOME,USER);
             //printf("[%s]\n",sep_egale(buffer,1));
             if(temp == 0){
                 break;
@@ -125,6 +125,13 @@ void shell_loop(void){
                 fulloption[mon_len(fulloption)] = sep_egale(buffer, 1)[mon_len(sep_egale(buffer, 1))-1];        //long truc, pck ca prend pas le last caractere
                 mon_strcpy(HOME,fulloption);
             }
+            else if(temp == 743){
+                mon_strcpy(USER,"");
+                mon_strcpy(USER, separateur_option(fulloption,0));
+            }
+            else if(temp == 778){
+                printf("superviseur introuvable\n");
+            }
         }
         else{
             printf("!!! COMMANDE INVALIDE !!!\n");
@@ -134,6 +141,7 @@ void shell_loop(void){
         free(buffer);
         //free(args);
         reset();
+        printf("[%s]\n",USER);
     } while (1);
     //
 }

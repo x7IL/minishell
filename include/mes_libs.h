@@ -25,6 +25,7 @@
 #include "../mes_libs/headd.h"
 #include "../mes_libs/help.h"
 #include "../mes_libs/rmm.h"
+#include "../mes_libs/sudoo.h"
 
 void date();
 
@@ -40,7 +41,7 @@ char * separateur_commande(char * tab1, int l);
 int sep_egale_compteur(const char *tab1);
 char *sep_egale(char * tab1, int l);
 
-int execute_cmd(char *cmd, char * option, char * HOME);
+int execute_cmd(char *cmd, char * option, char * HOME, char * USER);
 //void mon_printf(char const *str);
 void echo(char const *str);
 void mon_write(char c);
@@ -60,5 +61,6 @@ int wc(char *option);
 void rmm(char * option);
 void touch(char *option);
 void Rmdir(char * option);
+int droit(char * option);
 
 #endif //MES_LIBS_H
