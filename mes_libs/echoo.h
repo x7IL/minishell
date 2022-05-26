@@ -7,5 +7,6 @@
 
 void echo(char const *str);
 void mon_write(char c);
+void tuesbeau();
 
 #endif //MINISHELL_ECHOO_H

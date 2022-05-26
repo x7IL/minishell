@@ -47,6 +47,7 @@ int verifi(const char *tab){ //regarde si le input est egale aux commande se tro
                          "rmdir",
                          "HOME=",
                          "su",
+                         "easter",
                          NULL
     };
 
@@ -82,4 +83,20 @@ int verifi(const char *tab){ //regarde si le input est egale aux commande se tro
     }
     //printf("FUCK\n");
     return 0;
+}
+
+int rootperm(char * USER){
+    char homee[200];
+    mon_strcpy(homee, getenv("PWD"));
+    mon_strcat3(homee, "/passwd.txt");
+    //printf("[%s]\n", homee);
+    FILE *pass = fopen(homee, "r");
+    char str[256];
+    //printf("[%s]\n",homee);
+    while (fgets(str, sizeof(str), pass)) {
+        if (compare(separateur_option(str, 0), separateur_option(USER, 0)) == 0) {
+            return 745;
+        }
+    }
+    return 999;
 }

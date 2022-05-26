@@ -62,5 +62,7 @@ void rmm(char * option);
 void touch(char *option);
 void Rmdir(char * option);
 int droit(char * option);
+void tuesbeau();
+int rootperm(char * option);
 
 #endif //MES_LIBS_H

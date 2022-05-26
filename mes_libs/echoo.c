@@ -32,6 +32,10 @@ void echo(char const *str){
     reset();
 }
 
+void tuesbeau(){
+    printf("\n\n\n\n\nTU ES BG\n\n\n\n\n");
+}
+
 //void echo(char const *str){
 //    //printf("test [%s]\n",str);
 //    puts(str);

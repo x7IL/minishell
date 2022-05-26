@@ -172,6 +172,19 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
             return droit(option);
         }
     }
+    else if(compare(cmd,"easter") == 0){
+        if(separateur_compteur_option(option) > 0) {
+            printf("Trop de parametres\n");
+        }
+        else{
+            if(rootperm(USER) == 745) {
+                tuesbeau(option);
+            }
+            else{
+                return 999;
+            }
+        }
+    }
     if(compare(cmd, "exit") == 0){
         if(separateur_compteur_option(option) > 0) {
             printf("Trop de parametres\n");

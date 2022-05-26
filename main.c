@@ -132,6 +132,9 @@ void shell_loop(void){
             else if(temp == 778){
                 printf("superviseur introuvable\n");
             }
+            else if(temp == 999){
+                printf("vous n'avez pas les droits suffisant pour utiliser la commande\n");
+            }
         }
         else{
             printf("!!! COMMANDE INVALIDE !!!\n");
@@ -141,7 +144,7 @@ void shell_loop(void){
         free(buffer);
         //free(args);
         reset();
-        printf("[%s]\n",USER);
+        //printf("[%s]\n",USER);
     } while (1);
     //
 }
