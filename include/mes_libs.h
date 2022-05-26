@@ -48,7 +48,7 @@ char * pwd();
 char * user();
 char * shell();
 char * home();
-void ls(char * option);
+int ls(char * option);
 void cd(char * path, char *HOME);
 void Mkdir(char *option);
 void head(char * fichier);

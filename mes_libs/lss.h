@@ -5,7 +5,7 @@
 #ifndef MINISHELL_LSS_H
 #define MINISHELL_LSS_H
 
-void ls(char * option);
+int ls(char * option);
 void reset ();
 void red ();
 #endif //MINISHELL_LSS_H
