@@ -54,10 +54,10 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
     }           //ok
     else if(compare(cmd,"HOME=") == 0){
         return 742;
-    }
+    }          //ok
     else if(compare(cmd,"ls") == 0){
         ls(option);
-    }
+    }             //ok
     else if(compare(cmd,"date") == 0){
         if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
@@ -117,7 +117,7 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
         else{
             clear(option);
         }
-    }
+    }          //ok
     else if(compare(cmd,"cat") == 0){
         if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
@@ -125,7 +125,7 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
         else{
             cat(option);
         }
-    }
+    }            //ok
     else if(compare(cmd,"wc") == 0){
         if(separateur_compteur_option(option) > 3) {
             printf("Trop de parametres\n");
@@ -133,7 +133,7 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
         else{
             wc(option);
         }
-    }
+    }             //ok
     else if(compare(cmd,"rm") == 0){
         if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
@@ -141,7 +141,7 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
         else{
             rmm(option);
         }
-    }
+    }             //ok
     else if(compare(cmd,"touch") == 0){
         if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
@@ -149,7 +149,7 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
         else{
             touch(option);
         }
-    }
+    }          //ok
     else if(compare(cmd,"rmdir") == 0){
         if(separateur_compteur_option(option) > 1) {
             printf("Trop de parametres\n");
@@ -157,7 +157,7 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
         else{
             Rmdir(option);
         }
-    }
+    }          //ok
     else if(compare(cmd,"su") == 0){
         if(separateur_compteur_option(option) > 2) {
             printf("Trop de parametres\n");
@@ -184,7 +184,7 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
                 return 999;
             }
         }
-    }
+    }         //test du su, si su == root, alors on peut utiliser easter, sinon acces reufuse
     if(compare(cmd, "exit") == 0){
         if(separateur_compteur_option(option) > 0) {
             printf("Trop de parametres\n");

@@ -130,6 +130,94 @@ void prompt(){
            "       la fonction PS1=[ce que vous voulez] vous permet de changer le prompt\n");
 }
 
+void homedirec(){
+    printf("\n----------------------------\n"
+           "\nNOM\n"
+           "       le prompt : HOME\n"
+           "SYNOPSIS\n"
+           "\n"
+           "    HOME=[directoire existant]\n"
+           "\n"
+           "DESCRIPTION\n"
+           "       la fonction HOME=[directoire existant] vous permet de changer le home courant\n");
+}
+
+void lshelp() {
+    printf("\n----------------------------\n"
+           "\nNOM\n"
+           "    ls - Afficher le contenu d'un répertoire  \n"
+           "SYNOPSIS\n"
+           "    ls [options] [fichier...]\n"
+           "Options POSIX : [-CFRacdilqrtu1] [--]\n"
+           "\n"
+           "DESCRIPTION\n"
+           "La commande ls affiche tout d'abord l'ensemble de ses arguments fichiers autres que des répertoires. Puis ls affiche l'ensemble des fichiers contenus dans chaque répertoire indiqué. Si aucun argument autre qu'une option n'est fourni, l'argument « . » (répertoire en cours) est pris par défaut. "
+           "Un fichier n'est affiché que si son nom ne commence pas par un point, ou si l'option -a est fournie.\n"
+           "Chacune des listes de fichiers (fichiers autres que des répertoires, et contenu de chaque répertoire) est triée séparément en fonction de la séquence d'ordre de la localisation en cours."
+           "Lorsque l'option -l est fournie, chaque liste est précédée d'une ligne indiquant la taille totale des fichiers de la liste, exprimée en blocs de 512 ou 1024 octets.\n"
+           "\n");
+}
+
+void cathelp() {
+    printf("\n----------------------------\n"
+           "\nNom\n"
+           "    cat - concaténation de fichiers et impression sur la sortie standard\n"
+           "Synopsis\n"
+           "    cat FICHIER]\n"
+           "Description\n"
+           "    Concatène le(s) FICHIER(S), ou l'entrée standard, à la sortie standard.");
+}
+
+void wchelp() {
+    printf("\n----------------------------\n"
+           "\nNom\n"
+           "    wc - affiche le nombre de lignes, de mots et d'octets pour chaque fichier\n"
+           "Synopsis\n"
+           "wc [FICHIER] [OPTION]\n"
+           "Description\n"
+           "    Affiche le nombre de nouvelles lignes avec -l, de mots avec -w et d'octets avec -c , et une ligne totale si pas d'options n'est spécifié.");
+}
+
+void rmhelp() {
+    printf("\n----------------------------\n"
+           "\nNAME\n"
+           "       rm - Suppression de fichiers\n"
+           "SYNOPSIS\n"
+           "       rm [FICHIER]\n"
+           "DESCRIPTION top\n"
+           "    rm supprime chaque fichier spécifié. Il ne supprime pas les répertoires.\n");
+}
+
+void touchhelp() {
+    printf("\n----------------------------\n"
+           "\nNOM haut\n"
+           "       creer un fichier\n"
+           "SYNOPSIS top\n"
+           "       touch FICHIER\n"
+           "DESCRIPTION top\n"
+           "       Un argument FILE qui n'existe pas est créé vide\n");
+}
+
+void rmdirhelp() {
+    printf("\n----------------------------\n"
+           "\nNAME\n"
+           "       rm - Suppression de directoires\n"
+           "SYNOPSIS\n"
+           "       rm [FICHIER]\n"
+           "DESCRIPTION top\n"
+           "    rm supprime chaque directoire spécifié.\n");
+}
+
+void suhelp() {
+    printf("\n----------------------------\n"
+           "\nNOM haut\n"
+           "       su - se connecte a un autre compte\n"
+           "SYNOPSIS top\n"
+           "       su [utilisateur] [mot de passe]\n"
+           "DESCRIPTION top\n"
+           "       su permet de se connecter a un autre utilisateur\n");
+}
+
 void Helpp(char *option){
     if(option[0] != '\0') {
         if (compare(option, "echo") == 0) {
@@ -152,9 +240,25 @@ void Helpp(char *option){
             exit_help();
         } else if (compare(option, "PS1") == 0) {
             prompt();
-        } else {
-            printf("help [%s] n'existe pas", option);
-        }
+        } else if(compare(option,"HOME") == 0) {
+            homedirec();
+        } else if(compare(option,"ls") == 0) {
+            lshelp();
+        }else if(compare(option,"cat") == 0) {
+            cathelp();
+        }else if(compare(option,"wc") == 0) {
+            wchelp();
+        }else if(compare(option,"rm") == 0) {
+            rmhelp();
+        }else if(compare(option,"touch") == 0) {
+            touchhelp();
+        }else if(compare(option,"rmdir") == 0) {
+            rmdirhelp();
+        }else if(compare(option,"rmdir") == 0) {
+            suhelp();
+        }else {
+                printf("help [%s] n'existe pas", option);
+            }
     }
     else{
         echo_help();
@@ -167,6 +271,15 @@ void Helpp(char *option){
         clear_help();
         exit_help();
         prompt();
+        homedirec();
+        lshelp();
+        cathelp();
+        wchelp();
+        rmhelp();
+        touchhelp();
+        rmdirhelp();
+        suhelp();
+
     }
     //echo_help();
 }
