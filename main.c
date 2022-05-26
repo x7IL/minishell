@@ -8,6 +8,10 @@
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c mes_libs/help.c
 //gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c mes_libs/help.c mes_libs/catt.c mes_libs/wcc.c mes_libs/rmm.c
+//gcc -O3 -Wall main.c mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c mes_libs/help.c mes_libs/catt.c mes_libs/wcc.c mes_libs/rmm.c mes_libs/sudoo.c
+//./a.out pour compiler
+
+
 
 //◦ my_cd                                                           ok
 //◦ my_history (liste des commandes passé, history 10 : )           ok
