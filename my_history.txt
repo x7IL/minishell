@@ -1282,3 +1282,14 @@ exit
 su tet 1234manger
 easter
 clear
+ls
+user
+su root 1234567890
+ls -l
+ls -a
+pwd
+echo j'aime lespates
+clear
+exit
+exit
+ls

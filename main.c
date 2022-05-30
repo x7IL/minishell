@@ -14,7 +14,6 @@ void shell_loop(void){
     char homee[200];
     mon_strcpy(homee,getenv("PWD"));
     mon_strcat2(homee,"/my_history.txt");
-
     do {
         int status;
         char cmd[256];
@@ -24,6 +23,7 @@ void shell_loop(void){
         int oui = 0;
         printf("%s ",PS1);
         getline(&buffer,&bufsize,stdin);
+
         /*printf("cmd [%s]\n",separateur_commande(buffer,0));*/
 
         DIR *rep = NULL;
