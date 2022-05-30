@@ -146,15 +146,18 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
         }
     }
     else if(compare(cmd,"easter") == 0){
+        /*printf("test\n");*/
         if(separateur_compteur_option(option) > 0) {
             printf("Trop de parametres\n");
         }
         else{
             if(rootperm(USER) == 745) {
+                /*printf("ou\n");*/
                 tuesbeau(option);
             }
             else{
-                return 999;
+                /*printf("la\n");*/
+                return 779;
             }
         }
     }

@@ -9,9 +9,7 @@ void head(char * fichier){
     if(n==0){
         n=10;
     }
-
     FILE* ptr = fopen(separateur_option(fichier,0), "r");
-
     if(ptr != NULL) {
         while (fgets(str, sizeof(str), ptr)) {
             printf("%s", str);
@@ -31,7 +29,6 @@ void head(char * fichier){
 void history(){
     char str[256];
     int i = 0;
-
     char homee[200];
     char homee2[200];
     mon_strcpy(homee,getenv("PWD"));
@@ -49,7 +46,7 @@ void history(){
         printf("fichier bug\n");
     }
     else {
-        /*printf("[%s]\n", homee2);*/
+        /* printf("[%s]\n", homee2); */
         while (fgets(str, sizeof(str), ptr)) {
             i++;
             if (i >= wc(homee2) - 10) {
@@ -57,6 +54,5 @@ void history(){
             }
         }
     }
-
     fclose(ptr);
 }

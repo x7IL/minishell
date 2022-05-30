@@ -69,7 +69,7 @@ int verifi(const char *tab){
 int rootperm(char * USER){
     char homee[200];
     mon_strcpy(homee, getenv("PWD"));
-    mon_strcat3(homee, "/passwd.txt");
+    mon_strcat2(homee, "/passwd.txt");
     FILE *pass = fopen(homee, "r");
     char str[256];
     while (fgets(str, sizeof(str), pass)) {

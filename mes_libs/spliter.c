@@ -5,7 +5,7 @@ char *separateur_option(char * tab1, int l){
     int acc = 0;
     int inc = 0;
     int i;
-    char *nom = malloc(sizeof (char) * mon_len(tab1));
+    char *nom = malloc(sizeof (char) * mon_len(tab1)+1);
     for(i = 0; tab1[i] != '\0';i++) {
         acc += (tab1[i] == ' ') ? 1 : 0;
         if (acc == l && tab1[i] != ' ') {
@@ -87,5 +87,33 @@ char *sep_egale(char * tab1, int l){
     if(l == 1) {
         nom[mon_len(nom) - 1] = '\0';
     }
+    return nom;
+}
+
+int stop(char t){
+    return (t ==' ') ? 1 : 0;
+}
+
+char *my_split(char * tab1, int l){
+    int acc = 0;
+    int inc = 0;
+    int i;
+    char *nom = malloc(sizeof (char) * mon_len(tab1));
+    for(i = 0; tab1[i] != '\0';i++) {
+        acc += (tab1[i] == ' ') ? 1 : 0;
+        if (acc == l) {
+            if(l == 0){
+                nom[inc] = tab1[i];
+            } else{
+                i += stop(tab1[i]);
+                nom[inc] = tab1[i];
+            }
+            inc++;
+        } else if(acc > l){
+            break;
+        }
+    }
+    if(nom[0] == '\0')
+        return NULL;
     return nom;
 }

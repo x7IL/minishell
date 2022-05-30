@@ -53,3 +53,16 @@ char * mon_strcat3(char *s, const char *append){
 
     return s;
 }
+
+char *add(char *tab, char *tab2){
+    char *bin = NULL;
+    int i;
+    bin = malloc(sizeof(char *) * 100);
+    for(i = 0; i < mon_len(tab2); i++){
+        bin[i] = tab2[i];
+    }
+    for(i = 0 ; i < mon_len(tab) + 1; i++){
+        bin[i+ mon_len(tab2)] = tab[i];
+    }
+    return bin;
+}

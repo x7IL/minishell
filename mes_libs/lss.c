@@ -109,11 +109,11 @@ int ls(char * option){
 
     char path[256];
     mon_strcpy(path,pwd());
-    if(((compare(separateur_option(option,0),"-l") == 0) || (compare(separateur_option(option,0),"-a") == 0)) || (compare(separateur_option(option,0),"") == 0)) {
+    printf("option ls [%s]\n",separateur_option(option,0));
+    if((compare(separateur_option(option,0),"-l") == 0) || (compare(separateur_option(option,0),"-a") == 0) || (compare(separateur_option(option,0),"") == 0)) {
         rep = opendir(".");
     }
     else{
-
         if (chdir(separateur_option(option,0)) != 0) {
             printf("le repertoire n'existe pas\n");
             return EXIT_FAILURE;

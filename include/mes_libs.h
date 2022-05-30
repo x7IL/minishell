@@ -32,6 +32,7 @@ void * mon_strcpy(char *dest, const char *src);
 char * mon_strcat(char *s, const char *append);
 char * mon_strcat2(char *s, const char *append);
 char * mon_strcat3(char *s, const char *append);
+char *add(char *tab, char *tab2);
 char * separateur_option(char * tab1, int l);
 char * separateur_commande(char * tab1, int l);
 int sep_egale_compteur(const char *tab1);
@@ -59,5 +60,6 @@ int droit(char * option);
 void tuesbeau();
 int rootperm(char * option);
 char * directoire(char * fichier);
+char *my_split(char * tab1, int l);
 
 #endif

@@ -926,3 +926,263 @@ clear
 clear
 clear
 clear
+exit
+ls -l
+ls -a
+exit
+ls -l
+ls -l -a -l -w -l -e
+exit
+ls -l -a -l -w -r -t -y\
+exit
+ls
+pwd
+pwd
+ls
+ls -l
+history
+history 123
+exit
+ls
+ls -l
+ls -a -l
+exit
+ls
+pwd
+exit
+pwd
+ls
+exit
+ls
+pwd
+ls -l -a 
+ls -a -l
+exit
+ls -l
+ls
+ls -l -a
+ls -a
+ls -a
+ls -l
+ls -a -l
+ls -l -a
+exit
+ls -a
+ls -l
+ls -l
+ls -a -l
+exit
+ls -l -a
+ls -a
+exit
+ls -l -a
+ls -a
+exit
+ls -l
+ls -l -a
+exit
+ls -l
+exit
+ls -l
+ls -l -a
+exit
+ls -l
+ls -l -a
+ls
+ls
+ls
+exit
+ls -l -a
+ls -l -a
+ls
+ls
+exit
+ls
+exit
+ls -l
+ls
+ls
+ls
+ls -l
+su root 1234567890
+user
+home
+HOME=/
+home
+shell
+ls
+pwd
+ls -l -a
+cd ..
+ls
+ls -l
+exit
+pwd
+ls
+pwd
+exit
+easter
+easter
+easter
+easter
+easter
+su root 1234567890
+easter
+easter
+easter
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+clear
+clear
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+cd
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+easter
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+history
+easter
+su root 1234567890
+user
+home
+exit
+ls
+ls -l
+ls -l -a
+ls -l -a d
+ls /d
+ls d
+ls /
+ls / -a -l
+ls -a -l /
+echo j'aime les pates a la vanille
+exit
+echo j'aime les pates a la vanille
+echo `pwd`
+echo pwd
+echo 'pwd'
+echo pwd
+echo $pwd
+echo HOME
+echo $HOME
+exit
+echo $HOME
+echo "lol
+ls -l -a
+exit
+ls -l a
+ls -l
+ls
+ls -l
+exit
+ls 
+ls
+ls -l
+exit
+ls
+ls -l
+ls -l -a
+exit
+ls
+ls -l
+ls -l -a
+exit
+ls
+exit
+ls
+su root 1234567890
+ls
+ls -l
+exit
+[A[A
+exit
+exit
+ls
+ls -l -a
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+ls
+su root 1234567890
+ls
+ls -l
+su normal 0987654321
+user
+ls
+exit
