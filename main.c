@@ -104,7 +104,7 @@ void shell_loop(void){
             char *temp_av[] = {
                     add(my_split(buffer, 0), "/bin/"),
                     (my_split(buffer,1) != NULL)? my_split(buffer, 1) : NULL,
-                    /*(my_split(buffer,2) != NULL)? my_split(buffer, 2) : NULL,
+                    (my_split(buffer,2) != NULL)? my_split(buffer, 2) : NULL,
                     (my_split(buffer,3) != NULL)? my_split(buffer, 3) : NULL,
                     (my_split(buffer,4) != NULL)? my_split(buffer, 4) : NULL,
                     (my_split(buffer,5) != NULL)? my_split(buffer, 5) : NULL,
@@ -122,7 +122,7 @@ void shell_loop(void){
                     (my_split(buffer,17) != NULL)? my_split(buffer, 17) : NULL,
                     (my_split(buffer,18) != NULL)? my_split(buffer, 18) : NULL,
                     (my_split(buffer,19) != NULL)? my_split(buffer, 19) : NULL,
-                    (my_split(buffer,20) != NULL)? my_split(buffer, 20) : NULL,*/
+                    (my_split(buffer,20) != NULL)? my_split(buffer, 20) : NULL,
                     NULL
 
             };

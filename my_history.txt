@@ -1186,3 +1186,4 @@ su normal 0987654321
 user
 ls
 exit
+ls -l -a
