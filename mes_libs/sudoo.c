@@ -1,6 +1,4 @@
-//
-// Created by wx on 26/05/2022.
-//
+
 
 #include "../include/mes_libs.h"
 
@@ -10,7 +8,6 @@ int droit(char * option){
         mon_strcpy(homee, getenv("PWD"));
         mon_strcat3(homee, "/passwd.txt");
         homee[mon_len(homee)-1] = '\0';
-        //printf("[%s]\n", homee);
         FILE *pass = fopen(homee, "r");
         char str[256];
         while (fgets(str, sizeof(str), pass)) {

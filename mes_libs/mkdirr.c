@@ -1,16 +1,9 @@
-//
-// Created by wx on 19/05/2022.
-//
-
 #include"../include/mes_libs.h"
 
 void touch(char *option) {
-    //printf("[%s]\n",option);
-
     int boolean = 0;
 
     DIR *rep = opendir ("." );
-    //printf("[%s]\n",option);
     if (rep != NULL){
         struct dirent *lecture;
         while ((lecture = readdir(rep))){
@@ -38,7 +31,6 @@ void Mkdir(char * option){
     int boolean = 0;
 
     DIR *rep = opendir ("." );
-    //printf("[%s]\n",option);
     if (rep != NULL){
         struct dirent *lecture;
         while ((lecture = readdir(rep))){

@@ -1,10 +1,8 @@
-//
-// Created by wx on 23/05/2022.
-//
-
 #include "../include/mes_libs.h"
 
 int wc(char *option){
+    int i;
+    int j;
 
     char str[256];
     FILE* ptr = fopen(separateur_option(option,0), "r");
@@ -15,25 +13,24 @@ int wc(char *option){
         int word = 0;
 
         while (fgets(str, sizeof(str), ptr)) {
-            for(int j = 0; str[j]!='\0';j++){
+            for(j = 0; str[j]!='\0';j++){
                 caractere++;
                 if (str[j] == ' ' && str[j+1] != ' ')
                     word++;
             }
             lignes++;
         }
-        //printf("caracteres : %d     lignes : %d    mot : %d\n",caractere,lignes,word);
+
         if(separateur_compteur_option(option)>=1) {
-            for (int i = 1; i < separateur_compteur_option(option) + 1; i++) {
-                //printf("[%s]\n", separateur_option(option,i));
+            for (i = 1; i < separateur_compteur_option(option) + 1; i++) {
                 if (compare(separateur_option(option, i), "-l") == 0) {
-                    //printf("%d ", lignes);
+                    /*printf("%d\n",lignes);*/
                     return lignes;
                 } else if (compare(separateur_option(option, i), "-w") == 0) {
-                    //printf("%d ", word);
+                    /*printf("%d\n",word);*/
                     return word;
                 } else if (compare(separateur_option(option, i), "-c") == 0) {
-                    //printf("%d", caractere);
+                    /*printf("%d\n",caractere);*/
                     return caractere;
                 } else {
                     printf("l'option n'existe pas");
@@ -44,7 +41,6 @@ int wc(char *option){
             printf("lignes : %d ", lignes);
             printf("mots : %d ", word);
             printf("caracteres : %d \n", caractere);
-
         }
         printf("\n");
     }
@@ -52,8 +48,5 @@ int wc(char *option){
         printf("le fichier n'a pas été trouvé\n");
     }
     return 0;
-    //printf("fin\n");
-    fclose(ptr);
-
 
 }

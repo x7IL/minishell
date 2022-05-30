@@ -1,29 +1,6 @@
-//
-// Created by wx on 16/05/2022.
-//
 
 #include "../include/mes_libs.h"
 
-
-void ls2(char * option){
-    DIR *rep = opendir (".");
-    //printf("[%s]\n",option);
-    if (rep != NULL){
-        struct dirent *lecture;
-        while ((lecture = readdir(rep))){
-            struct stat st;
-            stat (lecture->d_name, &st);{
-/* Modified time */
-                time_t t = st.st_mtime;
-                struct tm tm = *localtime (&t);
-                char s[32];
-                strftime(s, sizeof s, "%d/%m/%Y %H:%M:%S", &tm);
-                printf("%-32s \t%s\n", lecture->d_name, s);
-            }
-        }
-        closedir(rep), rep = NULL;
-    }
-}
 
 int bytes(char *fichier){
     struct stat fileStat;
@@ -38,14 +15,7 @@ int links(char *fichier){
     return fileStat.st_nlink;
 }
 
-//Black \033[0;30m
-//Red \033[0;31m
-//Green \033[0;32m
-//Yellow \033[0;33m
-//Blue \033[0;34m
-//Purple \033[0;35m
-//Cyan \033[0;36m
-//White \033[0;37m
+
 
 void black () {
     printf("\033[0;30m");
@@ -83,7 +53,13 @@ void reset () {
     printf("\033[0m");
 }
 
-void perm(char * fichier){
+char * directoire(char * fichier){
+    struct stat fileStat;
+    stat(fichier, &fileStat);
+    return (S_ISDIR(fileStat.st_mode)) ? "d" : "-";
+}
+
+int perm(char * fichier){
     struct stat fileStat;
     stat(fichier, &fileStat);
     printf(" ");
@@ -106,8 +82,7 @@ void perm(char * fichier){
     printf((fileStat.st_mode & S_IXOTH) ? "x" : "-");
     reset();
     printf("\t");
-
-    //printf("The file %s a symbolic link\n", (S_ISLNK(fileStat.st_mode)) ? "is" : "is not");
+    return (compare((S_ISDIR(fileStat.st_mode)) ? "d" : "-",  "d") == 0) ? 4 : 2;
 }
 
 int ls(char * option){
@@ -118,28 +93,27 @@ int ls(char * option){
     int option_l = 0;
     int aucun = 0;
     int  stop = 0;
+    int i;
+    int directory = 0;
 
-    for(int i = 0; i < separateur_compteur_option(option)+1;i++) {
+    for(i = 0; i < separateur_compteur_option(option)+1;i++) {
         if (compare("-l", separateur_option(option,i)) == 0) {
             option_l = 1;
         } else if (compare("-a", separateur_option(option,i)) == 0) {
             option_a = 1;
         }
-        //printf("-->[%d][%d]\n",compare("-l", separateur_option(option,i)),compare("-a", separateur_option(option,i)));
     }
-    //printf("[%d][%d]\n",option_a,option_l);
     if(option_a == 0 && option_l == 0){
         aucun = 1;
     }
 
     char path[256];
     mon_strcpy(path,pwd());
-    //printf("-->[%s]<--\n",path);
     if(((compare(separateur_option(option,0),"-l") == 0) || (compare(separateur_option(option,0),"-a") == 0)) || (compare(separateur_option(option,0),"") == 0)) {
         rep = opendir(".");
     }
     else{
-        //printf("[%s]\n",separateur_option(option,0));
+
         if (chdir(separateur_option(option,0)) != 0) {
             printf("le repertoire n'existe pas\n");
             return EXIT_FAILURE;
@@ -159,7 +133,7 @@ int ls(char * option){
             strftime(s, sizeof s, "%d/%m/%Y %H:%M:%S", &tm);
             if ((lecture->d_name[0] == '.') && option_a == 1) {
                 if(option_l == 1) {
-                    perm(lecture->d_name);
+                    directory = perm(lecture->d_name);
                     printf("%-15d", links(lecture->d_name));
                     printf("%-20d", bytes(lecture->d_name));
                     printf("%-25s", s);
@@ -179,12 +153,19 @@ int ls(char * option){
             else if((lecture->d_name[0] != '.')){
                 stop = 1;
                 if(option_l == 1) {
-                    perm(lecture->d_name);
+                    directory = perm(lecture->d_name);
                     printf("%-15d", links(lecture->d_name));
                     printf("%-20d", bytes(lecture->d_name));
                     printf("%-25s", s);
                 }
-                printf("%-30s", lecture->d_name);
+                if(directory == 4) {
+                    yellow();
+                    printf("%-30s", lecture->d_name);
+                    reset();
+                }
+                else{
+                    printf("%-30s", lecture->d_name);
+                }
             }
 
             if(option_l == 1 && stop == 1){
@@ -203,15 +184,10 @@ int ls(char * option){
                 printf("\n");
             }
             stop = 0;
+            directory = 0;
         }
-
-
     }
     chdir(path);
-    //printf("option -->[%s]\n",option);
-
-    //int aa = 0;
-    //int ll = 0;
     printf("\n");
     closedir(rep);
     return EXIT_SUCCESS;

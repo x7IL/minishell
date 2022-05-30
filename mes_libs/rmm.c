@@ -1,6 +1,3 @@
-//
-// Created by wx on 24/05/2022.
-//
 
 #include "../include/mes_libs.h"
 
@@ -11,7 +8,12 @@ void rmm(char * option){
         printf("le fichier n'existe pas\n");
     }
     else{
-        remove(option);
+        if(compare(directoire(option),"d") ==0 ){
+            printf("ceci n'est pas un fichier, mais un dossier, veuillez supprimer ce qu'il y a à l'interieur.\n");
+        }
+        else {
+            remove(option);
+        }
     }
     fclose(file);
 }
@@ -19,8 +21,8 @@ void rmm(char * option){
 void Rmdir(char * option){
     int boolean = 0;
 
-    DIR *rep = opendir ("." );
-    //printf("[%s]\n",option);
+    DIR *rep = opendir (".");
+
     if (rep != NULL){
         struct dirent *lecture;
         while ((lecture = readdir(rep))){
@@ -30,7 +32,9 @@ void Rmdir(char * option){
                     boolean = 1;
                 }
                 if(boolean == 1){
+                    printf("%d\n",rmdir(option));
                     rmdir(option);
+
                     break;
                 }
             }

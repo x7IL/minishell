@@ -1,7 +1,3 @@
-//
-// Created by wx on 22/05/2022.
-//
-
 #include "../include/mes_libs.h"
 
 void echo_help(){
@@ -151,10 +147,10 @@ void lshelp() {
            "Options POSIX : [-CFRacdilqrtu1] [--]\n"
            "\n"
            "DESCRIPTION\n"
-           "La commande ls affiche tout d'abord l'ensemble de ses arguments fichiers autres que des répertoires. Puis ls affiche l'ensemble des fichiers contenus dans chaque répertoire indiqué. Si aucun argument autre qu'une option n'est fourni, l'argument « . » (répertoire en cours) est pris par défaut. "
-           "Un fichier n'est affiché que si son nom ne commence pas par un point, ou si l'option -a est fournie.\n"
-           "Chacune des listes de fichiers (fichiers autres que des répertoires, et contenu de chaque répertoire) est triée séparément en fonction de la séquence d'ordre de la localisation en cours."
-           "Lorsque l'option -l est fournie, chaque liste est précédée d'une ligne indiquant la taille totale des fichiers de la liste, exprimée en blocs de 512 ou 1024 octets.\n"
+           "    La commande ls affiche tout d'abord l'ensemble de ses arguments fichiers autres que des répertoires. Puis ls affiche l'ensemble des fichiers contenus dans chaque répertoire indiqué. Si aucun argument autre qu'une option n'est fourni, l'argument « . » (répertoire en cours) est pris par défaut. "
+           "    Un fichier n'est affiché que si son nom ne commence pas par un point, ou si l'option -a est fournie.\n"
+           "    Chacune des listes de fichiers (fichiers autres que des répertoires, et contenu de chaque répertoire) est triée séparément en fonction de la séquence d'ordre de la localisation en cours."
+           "    Lorsque l'option -l est fournie, chaque liste est précédée d'une ligne indiquant la taille totale des fichiers de la liste, exprimée en blocs de 512 ou 1024 octets.\n"
            "\n");
 }
 
@@ -165,7 +161,7 @@ void cathelp() {
            "Synopsis\n"
            "    cat FICHIER]\n"
            "Description\n"
-           "    Concatène le(s) FICHIER(S), ou l'entrée standard, à la sortie standard.");
+           "    Concatène le(s) FICHIER(S), ou l'entrée standard, à la sortie standard.\n");
 }
 
 void wchelp() {
@@ -175,13 +171,13 @@ void wchelp() {
            "Synopsis\n"
            "wc [FICHIER] [OPTION]\n"
            "Description\n"
-           "    Affiche le nombre de nouvelles lignes avec -l, de mots avec -w et d'octets avec -c , et une ligne totale si pas d'options n'est spécifié.");
+           "    Affiche le nombre de nouvelles lignes avec -l, de mots avec -w et d'octets avec -c , et une ligne totale si pas d'options n'est spécifié.\n");
 }
 
 void rmhelp() {
     printf("\n----------------------------\n"
            "\nNAME\n"
-           "       rm - Suppression de fichiers\n"
+           "       rm - Suppression de fichiers se trouvant dans le meme repertoire\n"
            "SYNOPSIS\n"
            "       rm [FICHIER]\n"
            "DESCRIPTION top\n"
@@ -201,11 +197,11 @@ void touchhelp() {
 void rmdirhelp() {
     printf("\n----------------------------\n"
            "\nNAME\n"
-           "       rm - Suppression de directoires\n"
+           "       rm - Suppression de directoires se trouvant dans le meme repertoire\n"
            "SYNOPSIS\n"
            "       rm [FICHIER]\n"
            "DESCRIPTION top\n"
-           "    rm supprime chaque directoire spécifié.\n");
+           "    rm supprime chaque directoire spécifié. Ne supprime pas si le dossier possede des fichiers\n");
 }
 
 void suhelp() {
@@ -281,7 +277,7 @@ void Helpp(char *option){
         suhelp();
 
     }
-    //echo_help();
+
 }
 
 
