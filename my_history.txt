@@ -1,0 +1,928 @@
+ls
+pwd
+ls
+pwd
+exit
+ls
+pwd
+ls
+echo ca marche la ?
+echo ca marche comme sur les patins en forme de cacahuettttttte
+echo bug
+echo BUUUUUUUUUUG
+exit
+exit
+echo lolokpjsodhbknjlmap apjonsfbknlmkpdajoh jaohbjksdfnl;djsabf jopdaihsbkhlndja snasld
+exit
+echo j'aime les pates a la vanille en forme de chocoalt
+echo et la y'a poksur ien]
+exit
+echo j'aime les pates a la vanille
+echo j'aime les pates a la vanille n forme de chocalt mnoir
+exit
+ls /Desktop -l -h
+exit
+ls
+ls
+ls
+ls
+ls minishell
+cd e
+pwd
+exit
+exit
+cd w
+exit
+ls
+ls
+pwd
+ls CLionProjects
+ls 
+ls ..
+pwd
+exit
+ls
+ls ..
+ls
+ls /Users
+ls
+pwd
+exit
+ls
+ls /Users
+exit
+ls /Users
+pwd
+exit
+ls /Users
+pwd
+exit
+ls
+pwd
+exit
+ls
+ls /Users
+pwd
+exit
+ls /Users
+pwd
+ls
+ls
+pwd
+exit
+ls /Users/wx
+ls ..
+ls
+ls include
+exit
+ls include
+ls
+ls ..
+ls include
+ls /include
+ls ..
+ls
+ls mes_libs
+ls include
+ls include
+ls include
+ls /Users
+ls
+cd ..
+ls
+ls refonte
+ls include
+ls include
+ls
+cd refonte
+cd mes_libs
+ls
+exit
+ls include
+ls wda
+ls include
+ls
+ls
+ls include
+ls
+ls ..
+ls .
+ls ..
+exit
+ls
+ls -l
+ls include
+ls w
+ls include
+ls e
+ls
+exit
+ls
+ls include
+ls
+ls include
+ls include
+ls
+ls include
+ls include
+ls include
+ls
+exit
+ls
+ls 
+exit
+ls
+exit
+ls
+ls -l
+exit
+ls -l
+ls -a
+ls
+ls include
+ls
+ls ..
+ls
+ls ..
+ls include
+cd include
+ls
+cd CLionProjects
+ls
+pwd
+ls minishell
+ls
+ls ..
+ls
+ls include
+ls include/
+pwd
+ls mes_libs/
+ls /include/
+exit
+ls
+ls -l
+exit
+ls
+ls -l -a
+exit
+ls
+exit
+ls
+exit
+ls
+exit
+ls
+exit
+ls
+exit
+ls
+exit
+ls
+exit
+ls
+ls -l
+ls -a
+exit
+ls
+exit
+ls
+exit
+ls
+ls -l
+exit
+ls
+ls -l
+exit
+ls
+exit
+ls
+exit
+ls
+ls -l -a
+exit
+ls
+exit
+ls
+exit
+ls 
+exit
+ls
+ls -l
+exit
+ls
+ls -a
+ls -l
+exit
+ls
+ls -l -a
+exit
+ls
+ls -l
+ls -l -a
+ls -a
+ls -a -l
+ls -l
+ls -a
+ls -l -a
+ls -l
+ls -a
+ls w -a
+ls -l
+exit
+ls -l
+ls -a
+ls -l
+ls -a
+ls -a -l
+exit
+ls
+ls -l
+ls -a -l
+exit
+ls -l -a
+ls -l
+exit
+ls
+ls -a
+ls -l
+exit
+ls
+ls -a
+ls -l
+ls -a -l
+exit
+ls
+ls -l
+ls -a
+exit
+ls
+ls -a
+ls -l
+ls -a -l
+ls -l -a
+ls -a -l
+ls -l
+ls -a
+exit
+ls
+ls -l
+exit
+ls
+ls -a
+ls -l
+ls -l -a
+exit
+ls -l
+ls -a
+ls -l -a
+exit
+ls
+ls -a
+ls -l
+exit
+ls
+ls -l
+ls -a
+exit
+ls 
+ls -l
+ls -a
+ls
+ls -l -a
+exit
+ls
+ls -l
+exit
+ls
+ls -l
+ls
+exit
+ls
+ls -l
+ls l-
+exit
+ls
+ls -l
+ls -a
+ls -l -a
+ls -a -l
+exit
+ls
+ls -l
+ls -a
+ls -l -a
+exit
+ls
+exit
+ls
+ls -l
+ls -l
+exit
+ls
+ls -l
+exit
+ls
+ls -l
+exit
+ls
+exit
+ls
+ls -l
+ls -a
+ls -l -a
+exit
+ls
+ls -l
+exit
+ls
+ls -l
+ls -a
+ls -l -a
+exit
+ls
+ls -l
+ls -a -l
+ls -l
+ls -a
+ls -l -a
+ls include
+ls .. -a -l
+ls ..
+exit
+exit
+ls
+ls ..
+pwd
+ls .. -l -a
+pwd
+ls
+ls ..
+ls
+ls .
+ls ..
+cd ..
+ls
+exit
+ls
+ls -l
+ls -a -l
+ls ..
+exit
+ls
+ls ..
+exit
+ls
+ls ..
+exit
+ls
+ls -l
+ls ..
+ls
+exit
+ls
+ls -l
+ls ..
+exit
+ls
+ls ..
+exit
+ls
+ls ..
+ls -l
+ls -a
+ls .. -l
+ls .. -a
+ls .. -a -l
+ls .. -a
+exit
+ls
+exit
+ls
+ls ..
+exit
+ls
+ls ..
+exit
+ls
+ls ..
+exit
+ls
+ls -l
+ls ..
+exit
+ls
+ls -l
+exit
+ls
+ls -l
+exit
+ls
+ls -l
+ls -a
+ls -l -a
+ls
+ls ..
+ls .. -l
+ls .. -l -a
+ls ../CLionProjects -a
+pwd
+ls ../CLionProjects
+ls ..
+ls ../.
+ls
+ls ../.
+clear
+ls
+ls ..
+ls /
+pwd
+ls /Users/wx/CLionProjects
+ls -l
+ls -a
+exit
+ls ..
+exit
+ls
+ls -l
+ls -a
+exit
+ls
+ls -l
+ls -l -a
+ls ..
+ls .. -l -a
+exit
+ls
+ls ..
+ls include
+ls include -a -l
+ls ..
+exit
+ls ..
+ls -a
+ls -a -l
+ls .. -a
+ls ..
+ls -a -l
+exit
+ls
+ls -l
+ls -a
+ls -l -a
+ls ..
+ls mes_libs
+ls mes_libs -1 -l
+exit
+sudo root
+ls
+sudo
+sudo root
+ls
+sudo
+sudo
+sudo root
+sudo root
+exit
+sudo
+user
+exit
+ls
+sudo
+sudo root
+sudo root 1234567890
+exit
+sudo
+ls
+sudo
+su
+su root
+su root 1234567890
+exit
+su
+su root
+exit
+su root
+exit
+su
+su root
+exit
+su 
+su root
+su root 0123456789
+su we 34
+su root
+su
+exit
+su root
+su root 123456790
+su
+exit
+su root
+su
+exit
+su
+su root
+exit
+su
+su root
+su root 123456789
+su root 1234567890
+su root 1234567890
+ls root
+su root
+su root 1234567890
+su root 1234567890
+su root 1234356
+exit
+su root 1234567890
+su root 123
+su we 324
+exit
+su
+easter
+easter
+easter
+easter
+easter
+su root
+su root 1234567890
+easter
+exit
+ls
+help
+exit
+ls
+pwd
+exit
+ls
+pwd
+ls -l
+ls -a
+ls -l -a
+ls
+ls -l
+ls -l -a
+easter
+su root 1234567890
+easter
+ls -a
+clear
+ls ..
+ls .. -a -l
+pwd
+ls
+ls -l
+ls mes_li
+ls mes_libs -l
+PS1=Pascuale >>>
+pwd
+cd
+pwd
+HOME=/Users/wx/CLionProjects
+pwd
+cd
+pwd
+ls
+ls -l
+easter
+su root 1234567890
+easter
+help
+help ls
+clear
+help ls
+clear
+help cat
+clear
+ls
+cd minishell2
+ls
+clear
+ls
+help mkdir
+mkdir include/manger
+touch include/manger/lol
+pwd
+cd include
+ls
+ls manger
+rm manger
+ls
+rmdir manger
+ls
+exit
+rmdir include/manger
+cd include
+pwd
+rm manger
+ls
+rmdir manger
+ls
+cd manger
+ls
+rm lol
+ls
+cd ..
+rmdir manger
+ls
+ls -l
+exit
+mkdir manger
+cd manger
+touch bouffer.txt
+ls
+cd ..
+rm manger
+ls
+exit
+ls
+rm manger
+exit
+rm manger
+exit
+rm manger
+exit
+rm manger
+exit
+rmdir manger
+ls
+rmdir manger
+exit
+rmdir manger
+ls
+rmdir manger
+exit
+rmdir manger
+ls -l
+exit
+exit
+ls
+pwd
+ls
+pwd
+ls
+ls mes_libs
+ls -l mes_libs
+ls mes_libs -l
+ls
+pwd
+ls
+PS1=Manger >
+pwd
+cd 
+pwd
+HOME=/Users/wx/CLionProjects/minishell2
+pwd
+cd
+pwd
+cd
+exit
+ls
+pwd
+ls -l
+exit
+ls
+pwd
+ls -l -a
+clear
+exit
+ls
+pwd
+ls -l -a
+clear
+exit
+ls 
+pwd
+ls -l
+PS1=mangeer
+exit
+ls
+pwd
+ls -l -a
+rm manger
+cd manger
+rm bouffer.txt
+cd ..
+ls
+rmdir manger
+ls
+exit
+ls
+exit
+lspwdexitls
+pwd
+exit
+ls
+pwd
+ls -a -l
+ls -l
+ls -a
+ls -l -a
+clear
+exit
+ls
+cd ..
+pwd
+clear
+ls
+ls -l -a
+exit
+ls
+ls -l
+exit
+ls
+ls -l
+exit
+ls
+ls -l
+exit
+ls -l
+ls -l -a
+echo j'aime els pates
+exit
+ls
+ls -l
+ls -a
+clear
+exit
+pwd
+user
+home
+PS1=manger >
+pwd
+cd
+ls
+cd
+pwd
+ls
+cd _libs
+ls
+ls -l
+ls -a
+ls -l -a
+ls mes_libs -a -l
+ls .. -a -l
+echo manger
+echo j'aime e;s [ates
+clear
+date
+clear
+date
+mkdir manger
+mkdir manger/vendre
+touch manger/vendre/fichier.txt
+help
+help cat
+clear
+cat help
+help cat
+pwd
+head mes_libs/catt.c 15
+history
+cat main.c
+wc mian.c -l
+wc -l main.c
+easter
+su root 1234567890
+su root 1234567890
+exit
+ls
+ls -l
+head main.c
+head main.c 10
+wc
+wc main.c
+exit
+ls
+ls -l
+wc
+wc main.c l
+wc main.c -l
+history
+ls
+history
+exit
+history
+exit
+history
+exit
+history
+ls
+history
+exit
+ls
+pwd
+history
+history
+history
+history
+history
+history
+history
+ls
+history
+history
+ls
+history
+exit
+ls
+pwd
+history
+history
+su root 1234567890
+su root 1234567890
+user
+exit
+wc my_history -l
+wc my_history.txt -l
+history
+exit
+history
+exit
+history
+exit
+history
+ls
+wc -l
+history
+history
+exit
+history
+exit
+history
+exit
+history
+exit
+history
+exit
+history
+exit
+history
+exit
+history
+exit
+history
+ls
+cd mes_libs
+ls
+cd
+exit
+cd
+ls
+pwd
+ls -l
+pwd
+exit
+pwd
+HOME=/Users/wx/CLionProjects/minishell2
+cd
+ls
+cd ..
+ls
+pwd
+cd ..
+cd ..
+pwd
+cd ..
+pwd
+cd ..
+pwd
+ls
+cd
+ls
+cd ../..
+ls
+cd
+clear
+exit
+clear
+exit
+clear
+exit
+history
+clear
+clear
+clear
+exit
+clear
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+clear
+clear
+clear
+clear
+clear
+clear
+clear
