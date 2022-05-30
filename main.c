@@ -39,7 +39,7 @@ void shell_loop(void){
             }
         }
 
-        if(oui == 0 || rootperm("root") != 745) {
+        if(oui == 0 || (compare(user(),"root") == 0)) {
             if (compare(buffer, "\n") == 0) {
                 printf("\n");
             }
