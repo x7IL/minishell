@@ -1187,3 +1187,4 @@ user
 ls
 exit
 ls -l -a
+exit
