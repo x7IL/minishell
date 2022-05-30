@@ -1237,3 +1237,48 @@ ls
 su root 1234567890
 ls
 ls -l
+easter
+su xu capricorne
+su normal 0987654321
+user
+su xu capricorne
+su xu capricorneeee
+su xu capricornee
+su xu capricorne
+su capricorne625
+su capricorne526
+su xu capricorne526
+exit
+su xu capricorne526
+su root 1234567890
+su root 0987654321
+su normal 0987654321
+exit
+su root 1234567890
+su normal 0987654321
+su xu capricorne526
+exit
+su xu capricorne526
+su normal 0987654321
+exit
+su xu capricorne526
+exit
+su xu capricorne526
+exit
+su root 1234567890
+exit
+exit
+su root 1234567890
+exit
+history
+su root 1234567890
+su xu capricorne526
+su tet 12345678900987654321
+exit
+su tet 1234567890098765432
+exit
+su tet 1234567890
+exit
+su tet 1234manger
+easter
+clear

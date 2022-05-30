@@ -17,12 +17,16 @@ int droit(char * option){
                 mon_strcpy(temp,separateur_option(option, 1));
                 temp[mon_len(temp) ] = '\0';
                 mon_strcpy(temp2,separateur_option(str, 1));
-                temp2[mon_len(temp2) -1 ] = '\0';
-                /*printf("[%s]\n",temp);
-                printf("[%s]\n",temp2);*/
+
+                if(mon_len(separateur_option(str,0)) >3) {
+                    temp2[mon_len(temp2) - 1] = '\0';
+                }
+                printf("[%s]\n",temp);
+                printf("[%s]\n",temp2);
                 if (compare(temp2, temp) == 0) {
                     return 743;
-                } else {
+                }
+                else {
                     printf("mot de passe incorrecte\n");
                     return 84;
                 }
