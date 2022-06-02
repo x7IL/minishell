@@ -27,6 +27,7 @@ void head(char * fichier){
 }
 
 void history(){
+
     char str[256];
     int i = 0;
     char homee[200];
@@ -49,7 +50,7 @@ void history(){
         /* printf("[%s]\n", homee2); */
         while (fgets(str, sizeof(str), ptr)) {
             i++;
-            if (i >= wc(homee2) - 10) {
+            if (i >= wc2(homee2) - 10) {
                 printf("%s", str);
             }
         }

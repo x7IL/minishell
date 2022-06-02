@@ -1,31 +1,118 @@
+
+/*gcc -O3 -ansi -Wall mes_libs/checker.c mes_libs/mon_string.c mes_libs/pwdd.c mes_libs/spliter.c mes_libs/executeur.c mes_libs/echoo.c  mes_libs/userr.c mes_libs/lss.c mes_libs/date.c mes_libs/mkdirr.c mes_libs/headd.c mes_libs/help.c mes_libs/catt.c mes_libs/wcc.c mes_libs/rmm.c mes_libs/sudoo.c main.c
+*/
+
 #include "include/mes_libs.h"
 
+char getche2() {
+    struct termios oldattr, newattr;
+    int ch;
+    tcgetattr(STDIN_FILENO, &oldattr);
+    newattr = oldattr;
+    newattr.c_lflag &= ~(ICANON);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newattr);
+    ch = getchar();
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldattr);
+    return ch;
+}
+
+char * getche(){
+    int ch = getche2();
+    size_t bufsize = 556;
+    char * buffer;
+    char *temp = malloc(bufsize * sizeof(char) + 1);
+    buffer = malloc(bufsize * sizeof(char) + 1);
+    char *ph = malloc(bufsize * sizeof(char) + 1);
+    int a;
+    int test;
+    int pointer = 0;
+    if(ch =='-' || ch =='='){
+        do{
+            test = getche2();
+            FILE *fp = fopen("my_history.txt", "r");
+            fseek(fp, pointer, SEEK_SET);
+            if(test == 10){
+                break;
+            }
+            else if(test == '-') {
+                fseek(fp, pointer, SEEK_SET);
+                fgets(ph, sizeof(ph), fp);
+                printf("%s\n",ph);
+                a = mon_len(ph);
+                if(a+pointer <= ftell(fp)){
+                    /*printf("ftell [%ld]\n", ftell(fp));
+                    printf("len du mot [%d]\n",mon_len(ph));*/
+                    pointer += a;
+                }
+            }
+            /*printf("\n%s",ph);*/
+            fclose(fp);
+        }while(1);
+        ph[mon_len(ph)-1]='\0';
+        return ph;
+    }
+    else if (ch == '\t'){
+        do{
+            ch = getche2();
+            if(ch =='\t'){
+                printf("pas eu le temps de terminé\n");
+            }
+            else if(ch == 10){
+                return "RIP";
+            }
+        }while(1);
+    }
+    else{
+        temp[0] = ch;
+        temp[1] = '\0';
+        getline(&buffer,&bufsize,stdin);
+        mon_strcat2(temp,buffer);
+        free(buffer);
+        temp[mon_len(temp)-1] ='\0';
+        return temp;
+    }
+}
+
+
+void  INThandler(){
+    char  c;
+    signal(SIGINT, SIG_IGN);
+    printf("\nC-trl C detecté\n"
+           "voulez vous vraiment quitter? [o/n]\n");
+    c = getchar();
+    if (c == 'o' || c == 'O')
+        exit(0);
+    else {
+        signal(SIGINT, INThandler);
+    }
+}
+
+
 void shell_loop(void){
-    char PS1[256] = "Esiea_shell_>";
+    signal(SIGINT, INThandler);
+    char PS11[256] = "Esiea_shell_>";
     int i;
-    char *HOME;
-    HOME = getenv("HOME");
+    char *HOMEE;
+    HOMEE = getenv("HOME");
     char *USER;
     USER = getenv("USER");
-
 
     size_t bufsize = 556;
 
     char homee[200];
     mon_strcpy(homee,getenv("PWD"));
     mon_strcat2(homee,"/my_history.txt");
+
     do {
+        printf("%s ",PS11);
         int status;
         char cmd[256];
         char reste[500];
-        char fulloption[500];
+        char option[500];
         char * buffer = malloc(bufsize * sizeof(char));
         int oui = 0;
-        printf("%s ",PS1);
-        getline(&buffer,&bufsize,stdin);
 
-        /*printf("cmd [%s]\n",separateur_commande(buffer,0));*/
-
+        mon_strcpy(buffer,getche());
         DIR *rep = NULL;
         rep = opendir("/bin");
         struct dirent *lecture;
@@ -38,51 +125,56 @@ void shell_loop(void){
                 }
             }
         }
-
-        if(oui == 0 || (compare(user(),"root") == 0)) {
+        /*printf("%d\n",rootperm(user()));*/
+        if(oui == 0 || rootperm(user()) != 745 || (compare(user(),"normal") == 0)) {
             if (compare(buffer, "\n") == 0) {
                 printf("\n");
             }
-            else if ((verifi(separateur_commande(buffer, 0)) == 1) || (verifi(sep_egale(buffer, 0)) == 1)) {
+            else if ((verifi(separateur_option(buffer, 0)) == 1) || (verifi(sep_egale(buffer, 0)) == 1)) {
 
                 FILE *fp = fopen(homee, "a");
                 fseek(fp, 0, SEEK_END);
-                fwrite(buffer, sizeof(char) * mon_len(buffer), sizeof(char), fp);
+                char temp4[200];
+                mon_strcpy(temp4,buffer);
+                mon_strcat2(temp4,"\n");
+                fwrite(temp4, sizeof(char) * mon_len(temp4), sizeof(char), fp);
                 fclose(fp);
+                /*printf("on se trouve dans main.c [%s]\n",homee);*/
 
                 if ((verifi(sep_egale(buffer, 0)) != 1)) {
-                    mon_strcpy(cmd, separateur_commande(buffer, 0));
-                    mon_strcpy(fulloption, separateur_option(buffer, 1));
+                    mon_strcpy(cmd, separateur_option(buffer, 0));
+                    mon_strcpy(option, separateur_option(buffer, 1));
                     for (i = 2; i < separateur_compteur_option(buffer) + 1; i++) {
                         mon_strcpy(reste, separateur_option(buffer, i));
-                        mon_strcat(fulloption, separateur_option(buffer, i));
-                        fulloption[mon_len(fulloption)] = '\0';
+                        mon_strcat(option, reste);
+                        option[mon_len(option)] = '\0';
                     }
-                    fulloption[mon_len(fulloption) - 1] = '\0';
-                    printf("option[%s]\n", fulloption);
+                    option[mon_len(option) - 1] = '\0';
+                    /*printf("option[%s]\n", option);*/
                 } else {
                     mon_strcpy(cmd, sep_egale(buffer, 0));
-                    mon_strcpy(fulloption, sep_egale(buffer, 1));
-                    fulloption[mon_len(fulloption) - 1] = '\0';
+                    mon_strcpy(option, sep_egale(buffer, 1));
+                    option[mon_len(option) - 1] = '\0';
                 }
-                printf("cmd 2 [%s]\n", separateur_commande(buffer,0));
+                /*printf("cmd 2 [%s]\n", separateur_commande(buffer,0));*/
+                /*printf("full[%s]\n",option);*/
 
-                int temp = execute_cmd(cmd, fulloption, HOME, USER);
+                int temp = execute_cmd(cmd, option, HOMEE, USER);
 
                 if (temp == 0) {
                     printf("\nFin du Mini SHELL \n");
                     break;
                 } else if (temp == 741) {
-                    mon_strcpy(PS1, "");
-                    fulloption[mon_len(fulloption)] = sep_egale(buffer, 1)[mon_len(sep_egale(buffer, 1)) - 1];
-                    mon_strcpy(PS1, fulloption);
+                    mon_strcpy(PS11, "");
+                    option[mon_len(option)] = sep_egale(buffer, 1)[mon_len(sep_egale(buffer, 1)) - 1];
+                    mon_strcpy(PS11, option);
                 } else if (temp == 742) {
-                    mon_strcpy(HOME, "");
-                    fulloption[mon_len(fulloption)] = sep_egale(buffer, 1)[mon_len(sep_egale(buffer, 1)) - 1];
-                    mon_strcpy(HOME, fulloption);
+                    mon_strcpy(HOMEE, "");
+                    option[mon_len(option)] = sep_egale(buffer, 1)[mon_len(sep_egale(buffer, 1)) - 1];
+                    mon_strcpy(HOMEE, option);
                 } else if (temp == 743) {
                     mon_strcpy(USER, "");
-                    mon_strcpy(USER, separateur_option(fulloption, 0));
+                    mon_strcpy(USER, separateur_option(option, 0));
                 } else if (temp == 778) {
                     printf("superviseur introuvable\n");
                 } else if (temp == 779) {
@@ -158,10 +250,10 @@ void shell_loop(void){
             }
 
         }
+        mon_strcpy(option,"");
+        mon_strcpy(cmd,"");
         wait(&status);
-        free(buffer);
         reset();
-
     } while (1);
 }
 

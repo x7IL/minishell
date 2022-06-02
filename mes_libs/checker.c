@@ -39,7 +39,7 @@ int verifi(const char *tab){
                          "touch",
                          "rmdir",
                          "HOME=",
-                         "su",
+                         "suu",
                          "easter",
                          NULL
     };

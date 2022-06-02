@@ -95,6 +95,7 @@ int ls(char * option){
     int  stop = 0;
     int i;
     int directory = 0;
+    /*printf("-->[%s]\n",option);*/
 
     for(i = 0; i < separateur_compteur_option(option)+1;i++) {
         if (compare("-l", separateur_option(option,i)) == 0) {
@@ -109,7 +110,7 @@ int ls(char * option){
 
     char path[256];
     mon_strcpy(path,pwd());
-    printf("option ls [%s]\n",separateur_option(option,0));
+    /*printf("option ls [%s]\n",separateur_option(option,0));*/
     if((compare(separateur_option(option,0),"-l") == 0) || (compare(separateur_option(option,0),"-a") == 0) || (compare(separateur_option(option,0),"") == 0)) {
         rep = opendir(".");
     }

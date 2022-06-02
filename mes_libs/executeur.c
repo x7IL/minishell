@@ -22,10 +22,10 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
     else if(compare(cmd,"shell") == 0){
         printf("%s\n",shell());
     }
-    else if(compare(cmd,"PS1=") == 0){
+    else if(compare(cmd,"PS11=") == 0){
         return 741;
     }
-    else if(compare(cmd,"HOME=") == 0){
+    else if(compare(cmd,"HOMEE=") == 0){
         return 742;
     }
     else if(compare(cmd,"ls") == 0){
@@ -131,7 +131,7 @@ int execute_cmd(char *cmd, char *option, char *HOME, char *USER){
             Rmdir(option);
         }
     }
-    else if(compare(cmd,"su") == 0){
+    else if(compare(cmd,"suu") == 0){
         if(separateur_compteur_option(option) > 2) {
             printf("Trop de parametres\n");
         }

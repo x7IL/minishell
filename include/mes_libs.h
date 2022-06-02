@@ -8,6 +8,8 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <time.h>
+#include <signal.h>
+#include <termios.h>
 
 #include "../mes_libs/checker.h"
 #include "../mes_libs/spliter.h"
@@ -61,5 +63,6 @@ void tuesbeau();
 int rootperm(char * option);
 char * directoire(char * fichier);
 char *my_split(char * tab1, int l);
+int wc2(char *option);
 
 #endif

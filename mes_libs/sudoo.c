@@ -21,8 +21,8 @@ int droit(char * option){
                 if(mon_len(separateur_option(str,0)) >3) {
                     temp2[mon_len(temp2) - 1] = '\0';
                 }
-                printf("[%s]\n",temp);
-                printf("[%s]\n",temp2);
+                /*printf("[%s]\n",temp);
+                printf("[%s]\n",temp2);*/
                 if (compare(temp2, temp) == 0) {
                     return 743;
                 }
